@@ -1,6 +1,8 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+alias ssh="kitty +kitten ssh"
+
 
 # If not running interactively, don't do anything
 case $- in
@@ -134,6 +136,8 @@ alias python='python3'
 alias sesh='echo $XDG_SESSION_TYPE'
 alias j='jupyter notebook'
 alias drugcentral='psql -h localhost -p 5432 -d drugcentral -U jordan'
+alias bayes='ssh joh195@bayes.shrs.pitt.edu'
+
 
 export PATH="$PATH:/home/jordan/.local/bin"
 

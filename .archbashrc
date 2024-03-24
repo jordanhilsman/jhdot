@@ -1,0 +1,50 @@
+#
+# ~/.bashrc
+#
+alias ssh="kitty +kitten ssh"
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias l='ls -CF'
+alias ll='ls -Ahlv --color=auto --group-directories-first'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
+alias bayes='ssh joh195@bayes.shrs.pitt.edu'
+alias ceres='ssh joh195@enact-prod-01.dbmi.pitt.edu'
+alias j='jupyter notebook'
+alias python='python3'
+alias sesh='echo $XDG_SESSION_TYPE'
+alias pittvpn='sudo openconnect --background --protocol=gp --authgroup BYOD-GATEWAY-FQ portal-palo.pitt.edu'
+alias wifi='sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf'
+alias sc='gscreenshot -f 'screenshot_$hx$w_%Y-%m-%d.png' -s -c -d 1'
+alias :q="exit"
+alias e="nvim"
+alias ceres_tunnel='ssh -L 8080:localhost:8080 -L 8081:localhost:8081 joh195@enact-prod-01.dbmi.pitt.edu'
+
+export XDG_DATA_HOME="$HOME/.local/share"
+eval "$(pyenv init -)"
+export PYENV_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/pyenv"
+
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
+export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+. "$HOME/.cargo/env"
+export PATH="$PATH:`pwd`/flutter/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export _JAVA_OPTIONS=-Djavafx.cachedir="$XDG_CACHE_HOME"/openjfx
+export XDG_STATE_HOME="$HOME/.local/state"
+export HISTFILE="$XDG_STATE_HOME"/bash/history 
+export IPYTHONDIR="$XDG_CONFIG_HOME"/ipython
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/jordan/google-cloud-sdk/path.bash.inc' ]; then . '/home/jordan/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/jordan/google-cloud-sdk/completion.bash.inc' ]; then . '/home/jordan/google-cloud-sdk/completion.bash.inc'; fi
+

@@ -23,6 +23,8 @@ alias sc='gscreenshot -f 'screenshot_$hx$w_%Y-%m-%d.png' -s -c -d 1'
 alias :q="exit"
 alias e="nvim"
 alias ceres_tunnel='ssh -L 8080:localhost:8080 -L 8081:localhost:8081 joh195@enact-prod-01.dbmi.pitt.edu'
+alias bup='brightnessctl s +10%'
+alias bdown='brightnessctl s 10%-'
 
 export XDG_DATA_HOME="$HOME/.local/share"
 eval "$(pyenv init -)"
@@ -32,14 +34,16 @@ export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin:$PATH"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
-. "$HOME/.cargo/env"
-export PATH="$PATH:`pwd`/flutter/bin"
-export PATH="$PATH":"$HOME/.pub-cache/bin"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export _JAVA_OPTIONS=-Djavafx.cachedir="$XDG_CACHE_HOME"/openjfx
 export XDG_STATE_HOME="$HOME/.local/state"
-export HISTFILE="$XDG_STATE_HOME"/bash/history 
+export HISTFILE="$XDG_STATE_HOME"/bash/history
 export IPYTHONDIR="$XDG_CONFIG_HOME"/ipython
+export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+
+export LS_COLORS="$LS_COLORS:*.zip=01;31"
 
 
 # The next line updates PATH for the Google Cloud SDK.

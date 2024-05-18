@@ -12,8 +12,6 @@ alias ll='ls -Ahlv --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-alias bayes='ssh joh195@bayes.shrs.pitt.edu'
-alias ceres='ssh joh195@enact-prod-01.dbmi.pitt.edu'
 alias j='jupyter notebook'
 alias python='python3'
 alias sesh='echo $XDG_SESSION_TYPE'
@@ -22,7 +20,6 @@ alias wifi='sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplican
 alias sc='gscreenshot -f 'screenshot_$hx$w_%Y-%m-%d.png' -s -c -d 1'
 alias :q="exit"
 alias e="nvim"
-alias ceres_tunnel='ssh -L 8080:localhost:8080 -L 8081:localhost:8081 joh195@enact-prod-01.dbmi.pitt.edu'
 alias bup='brightnessctl s +10%'
 alias bdown='brightnessctl s 10%-'
 
